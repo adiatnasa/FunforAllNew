@@ -1,0 +1,39 @@
+/* Outer Services Group */
+.services-group {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: var(--wp--preset--spacing--50);
+    padding-bottom: var(--wp--preset--spacing--50);
+  }
+  
+  /* Spacer with height preset */
+  .spacer-20 {
+    height: var(--wp--preset--spacing--20);
+  }
+  
+  /* Services Columns Gap */
+  .services-columns {
+    gap: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30);
+  }
+  
+  /* Service Item Headings */
+  .is-service-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Service Descriptions */
+  .is-service-description {
+    margin-bottom: 1rem;
+  }
+  
+  /* Service Link Styling */
+  .is-service-link a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .is-service-link a:hover {
+    text-decoration: underline;
+  }
+  
