@@ -2,78 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cover Gallery</title>
-  <link rel="stylesheet" href="jp.css">
+  <title>Joke Slideshow</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Cover Block -->
-  <div class="wp-block-cover alignfull">
-    <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
-    <div class="wp-block-cover__inner-container">
-      
-      <!-- Gallery Group (replaces the inline padding/margin styles) -->
-      <div class="wp-block-group alignfull gallery-group">
-        
-        <!-- Spacer -->
-        <div class="wp-block-spacer spacer-vertical"></div>
-        
-        <!-- Paragraph -->
-        <p>
-          Laughter is the best medicine, and we have plenty to keep you entertained! Here’s a joke to get you started:
-        </p>
-        
-        <!-- Jetpack Slideshow -->
-        <div class="wp-block-jetpack-slideshow alignwide" data-autoplay="true" data-delay="3" data-effect="slide">
-          <div class="wp-block-jetpack-slideshow_container swiper-container">
-            <ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper">
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-52" data-id="52" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/1-1.png" />
-                </figure>
-              </li>
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-53" data-id="53" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/2-2.png" />
-                </figure>
-              </li>
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-54" data-id="54" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/3-2.png" />
-                </figure>
-              </li>
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-55" data-id="55" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/4-1.png" />
-                </figure>
-              </li>
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-56" data-id="56" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/5-1.png" />
-                </figure>
-              </li>
-              <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                <figure>
-                  <img alt="" class="wp-block-jetpack-slideshow_image wp-image-57" data-id="57" src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/6-1.png" />
-                </figure>
-              </li>
-            </ul>
-            <a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a>
-            <a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a>
-            <a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a>
-            <div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div>
-          </div>
-        </div>
-        
-        <!-- Spacer -->
-        <div class="wp-block-spacer spacer-vertical"></div>
-        
-      </div>
-      <!-- End Gallery Group -->
-      
-    </div>
+<div class="gallery-container">
+
+  <h1>Enjoy Some Laughs!</h1>
+
+  <div class="joke" id="joke-text">
+    Why don't scientists trust atoms? Because they make up everything!
   </div>
-  <!-- End Cover Block -->
+
+  <div class="slideshow" id="slideshow">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/1-1.png" class="active" alt="Funny Image 1">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/2-2.png" alt="Funny Image 2">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/3-2.png" alt="Funny Image 3">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/4-1.png" alt="Funny Image 4">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/5-1.png" alt="Funny Image 5">
+    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/6-1.png" alt="Funny Image 6">
+  </div>
+
+  <div class="controls">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
+</div>
+
+<script>
+  const jokes = [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "I'm reading a book about anti-gravity. It's impossible to put down!",
+    "Why did the math book look sad? Because it had too many problems.",
+    "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+    "What do you call fake spaghetti? An impasta!",
+    "Why was the stadium so hot after the game? All the fans left!"
+  ];
+
+  const images = document.querySelectorAll('#slideshow img');
+  const jokeText = document.getElementById('joke-text');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+    jokeText.textContent = jokes[index];
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(currentIndex);
+  }
+
+  // Optional: Auto-slide every 5 seconds
+  setInterval(nextSlide, 5000);
+</script>
 
 </body>
 </html>
