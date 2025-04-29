@@ -2,70 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Joke Slideshow</title>
+  <title>Joke Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="gallery-container">
-
   <h1>Enjoy Some Laughs!</h1>
 
-  <div class="joke" id="joke-text">
-    Why don't scientists trust atoms? Because they make up everything!
-  </div>
-
-  <div class="slideshow" id="slideshow">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/1-1.png" class="active" alt="Funny Image 1">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/2-2.png" alt="Funny Image 2">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/3-2.png" alt="Funny Image 3">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/4-1.png" alt="Funny Image 4">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/5-1.png" alt="Funny Image 5">
-    <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/6-1.png" alt="Funny Image 6">
-  </div>
-
-  <div class="controls">
-    <button onclick="prevSlide()">Previous</button>
-    <button onclick="nextSlide()">Next</button>
+  <div class="joke-gallery">
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/1-1.png" alt="Funny 1">
+      <p>Why don't scientists trust atoms? Because they make up everything!</p>
+    </div>
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/2-2.png" alt="Funny 2">
+      <p>I'm reading a book about anti-gravity. It's impossible to put down!</p>
+    </div>
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/3-2.png" alt="Funny 3">
+      <p>Why did the math book look sad? Because it had too many problems.</p>
+    </div>
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/4-1.png" alt="Funny 4">
+      <p>Parallel lines have so much in common… it’s a shame they’ll never meet.</p>
+    </div>
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/5-1.png" alt="Funny 5">
+      <p>What do you call fake spaghetti? An impasta!</p>
+    </div>
+    <div class="joke-item">
+      <img src="https://adityanaharitec.wordpress.com/wp-content/uploads/2025/02/6-1.png" alt="Funny 6">
+      <p>Why was the stadium so hot after the game? All the fans left!</p>
+    </div>
   </div>
 
 </div>
-
-<script>
-  const jokes = [
-    "Why don't scientists trust atoms? Because they make up everything!",
-    "I'm reading a book about anti-gravity. It's impossible to put down!",
-    "Why did the math book look sad? Because it had too many problems.",
-    "Parallel lines have so much in common… it’s a shame they’ll never meet.",
-    "What do you call fake spaghetti? An impasta!",
-    "Why was the stadium so hot after the game? All the fans left!"
-  ];
-
-  const images = document.querySelectorAll('#slideshow img');
-  const jokeText = document.getElementById('joke-text');
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
-    });
-    jokeText.textContent = jokes[index];
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showSlide(currentIndex);
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showSlide(currentIndex);
-  }
-
-  // Optional: Auto-slide every 5 seconds
-  setInterval(nextSlide, 5000);
-</script>
 
 </body>
 </html>
