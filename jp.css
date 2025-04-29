@@ -38,9 +38,13 @@ body {
     padding: 20px;
 }
 
-/* Slideshow Images - Force same size */
 .wp-block-jetpack-slideshow_image {
   width: 100%;
-  height: 400px;
+  height: 250px;
   object-fit: cover;
+}
+
+.wp-block-jetpack-slideshow_container {
+  max-width: 800px;
+  margin: 0 auto;
 }
