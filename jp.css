@@ -1,41 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Laugh Out Loud!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Base Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-<div class="joke-gallery">
+/* Joke Gallery Layout */
+.joke-gallery {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 900px;
+  width: 90%;
+  text-align: center;
+}
 
-  <h1>Laugh Out Loud!</h1>
+.joke-gallery h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #333;
+}
 
-  <div class="joke-card">
-    <p>Why don't scientists trust atoms? Because they make up everything!</p>
-  </div>
+/* Each Joke Card */
+.joke-card {
+  background: #f0f8ff;
+  border: 2px solid #66a6ff;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 20px;
+  font-size: 20px;
+  color: #333;
+  transition: 0.3s;
+}
 
-  <div class="joke-card">
-    <p>I'm reading a book about anti-gravity. It's impossible to put down!</p>
-  </div>
-
-  <div class="joke-card">
-    <p>Why did the math book look sad? Because it had too many problems.</p>
-  </div>
-
-  <div class="joke-card">
-    <p>Parallel lines have so much in common… it’s a shame they’ll never meet.</p>
-  </div>
-
-  <div class="joke-card">
-    <p>What do you call fake spaghetti? An impasta!</p>
-  </div>
-
-  <div class="joke-card">
-    <p>Why was the stadium so hot after the game? All the fans left!</p>
-  </div>
-
-</div>
-
-</body>
-</html>
+.joke-card:hover {
+  background: #d0eaff;
+  transform: scale(1.03);
+}
