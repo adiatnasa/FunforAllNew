@@ -39,9 +39,9 @@ body {
 }
 
 .wp-block-jetpack-slideshow_image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  width: 100% !important;
+  height: 150px !important; /* much smaller */
+  object-fit: cover !important;
 }
 
 .wp-block-jetpack-slideshow_container {
